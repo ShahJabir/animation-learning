@@ -16,34 +16,39 @@ body {
 }
 #app {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
   align-items: center;
 }
 .box {
-  width: 500px;
-  /* height: 500px; */
-  aspect-ratio: 5102 / 3236;
+  width: 70px;
+  height: 70px;
   background-color: crimson;
-  /* transition:
-    background-color 0.4s ease-out,
-    scale 0.6s ease-in-out; */
-  transition: transform 0.5s ease;
-  transform-origin: top left;
-  overflow: hidden;
+  animation: animate 2s ease-in-out 0s infinite alternate forwards;
 }
-.box:hover {
-  transform: rotate(25deg);
-  /* transform: translate3d(50px, 35px, 25px) rotate(45deg) scale(0.75) skew(45deg); */
+
+@keyframes animate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
 }
-.box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: scale 0.6s ease-in-out;
+.box:nth-child(1) {
+  animation-delay: 0.2s;
 }
-.box:hover img {
-  scale: 1.3;
+.box:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.box:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.box:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.box:nth-child(5) {
+  animation-delay: 1.6s;
 }
