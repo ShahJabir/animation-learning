@@ -7,11 +7,28 @@
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
   background: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #app {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 5rem;
+}
+
+.signature {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 1;
+  animation: draw 2.5s ease-out forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
