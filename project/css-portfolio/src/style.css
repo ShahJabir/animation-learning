@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+span {
+  font-family: "Google Sans", sans-serif;
+}
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Lato", sans-serif;
+}
+.landing-page {
+  height: 120vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: antiquewhite;
+}
+.top-section {
+  height: 55%;
+  width: 100%;
+  background-color: #fd1c00;
+}
+.top-section nav {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  padding: 0 2rem;
+}
+.top-section nav .nav-left {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  color: whitesmoke;
+  gap: 0.1rem;
+}
+.nav-links {
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: landing-p-animation 1.8s ease-out;
+}
+.nav-links::before {
+  content: "";
+  height: 10%;
+  width: 0.7vw;
+  top: 0;
+  transition: width 0.2s ease-out;
+  background-color: whitesmoke;
+}
+.nav-links:hover::before {
+  width: 2vw;
+  transform-origin: left;
+}
+.nav-links h3 {
+  font-size: 1.4rem;
+}
+.nav-right {
+  padding-top: 2rem;
+}
+.nav-right p {
+  font-size: 1.3rem;
+  color: whitesmoke;
+  width: 20ch;
+  margin-bottom: 1rem;
+  animation: landing-p-animation 1.8s ease-out;
+}
+.top-section nav .nav-right {
+  height: 100%;
+  width: 35%;
+}
+.top-section .heading {
+  height: 65%;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+}
+.top-section .heading h1 {
+  font-size: 16rem;
+  color: whitesmoke;
+  font-weight: 500;
+  line-height: 1.2;
+  animation: landing-text-animation 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.bottom-section {
+  height: 45%;
+  width: 100%;
+  overflow: hidden;
+}
+.bottom-section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: scale 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: landing-image-animation 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.bottom-section:hover img {
+  scale: 1.15;
+}
+@keyframes landing-p-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes landing-text-animation {
+  from {
+    transform: translateY(120%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes landing-image-animation {
+  from {
+    scale: 1.8;
+  }
+  to {
+    scale: 1;
+  }
+}
