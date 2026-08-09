@@ -15,6 +15,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 120px;
   height: 100%;
   width: 100%;
+}
+
+.btn-wrapper {
+  display: flex;
+}
+
+button {
+  font-size: 3rem;
+  padding: 2rem 4rem;
+  margin: 0 4rem;
 }
