@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.signature {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 2.5s ease-out infinite alternate;
+}
+.ball {
+  offset-path: path("M10,120 C120,-20 280,320 390,30");
+  offset-rotate: auto;
+  animation: fly 4s linear infinite alternate;
+}
+#curve {
+  display: none;
+}
+.goo-wrap {
+  filter: url(#goo);
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+.blob {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: crimson;
+  animation: drift 2.5s ease-in-out infinite alternate;
+}
+.blob2 {
+  animation-delay: -1.2s;
+}
+.goo-wrap2 {
+  filter: url(#goo2);
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+.goo-text {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(80px);
+  }
+}
+@keyframes fly {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
